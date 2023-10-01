@@ -1,6 +1,7 @@
 package com.example.emailsender
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         val sendIntent = Intent(Intent.ACTION_SEND)
         sendIntent.type = "text/plain"
 
-        sendIntent.putExtra(Intent.EXTRA_EMAIL, email)
+        sendIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
         sendIntent.putExtra(Intent.EXTRA_SUBJECT, subject)
         sendIntent.putExtra(Intent.EXTRA_TEXT, text)
 
